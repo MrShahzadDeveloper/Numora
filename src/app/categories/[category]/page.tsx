@@ -75,14 +75,13 @@ const calculatorsData: { [key: string]: Calculator[] } = {
     { title: "Statistics Calculator", description: "Compute mean, median, mode, and standard deviation.", icon: BarChart, id: "statistics" },
   ],
   "everyday-life": [
-  { title: "Tip Calculator", description: "Calculate tips and split bills easily.", icon: Clock, id: "tip" },
-  { title: "Age Calculator", description: "Find out your age in years, months, and days.", icon: Calendar, id: "age" },
-  { title: "Time Zone Converter", description: "Convert time between different time zones.", icon: Globe, id: "time-zone" },
-  { title: "Discount Calculator", description: "Calculate discounts and final prices.", icon: Percent, id: "discount" },
-  { title: "GPA Calculator", description: "Calculate your Grade Point Average for school or college.", icon: BookOpen, id: "gpa" },
-  { title: "Day Calculator", description: "Find the number of days between two dates.", icon: CalendarDays, id: "day-calculator" },
-],
-
+    { title: "Tip Calculator", description: "Calculate tips and split bills easily.", icon: Clock, id: "tip" },
+    { title: "Age Calculator", description: "Find out your age in years, months, and days.", icon: Calendar, id: "age" },
+    { title: "Time Zone Converter", description: "Convert time between different time zones.", icon: Globe, id: "time-zone" },
+    { title: "Discount Calculator", description: "Calculate discounts and final prices.", icon: Percent, id: "discount" },
+    { title: "GPA Calculator", description: "Calculate your Grade Point Average for school or college.", icon: BookOpen, id: "gpa" },
+    { title: "Day Calculator", description: "Find the number of days between two dates.", icon: CalendarDays, id: "day-calculator" },
+  ],
 };
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
@@ -100,28 +99,43 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
   return (
     <div className="min-h-[92vh] bg-gradient-to-br from-blue-50 via-white to-teal-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl mb-4 text-slate-800">{displayTitle} Calculators</h1>
-          <p className="text-xl text-slate-600">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 lg:py-16">
+        {/* Header */}
+        <div className="text-center mb-8 sm:mb-12">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl mb-3 sm:mb-4 text-slate-800">
+            {displayTitle} Calculators
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl text-slate-600">
             Choose from our collection of {displayTitle} calculation tools
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Grid of Calculators */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {calculators.map((calculator) => (
             <div
               key={calculator.id}
-              className="group p-6 rounded-xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-0 bg-white/70 backdrop-blur-sm flex flex-col h-full"
+              className="group p-5 sm:p-6 rounded-xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-0 bg-white/70 backdrop-blur-sm flex flex-col h-full"
             >
-              <div className="w-12 h-12 bg-gradient-to-br from-cyan-100 to-blue-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <calculator.icon className="h-6 w-6 text-cyan-600" />
+              {/* Icon */}
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-cyan-100 to-blue-100 rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
+                <calculator.icon className="h-5 w-5 sm:h-6 sm:w-6 text-cyan-600" />
               </div>
-              <h3 className="text-lg font-semibold text-slate-800 mb-2">{calculator.title}</h3>
-              <p className="text-slate-600 mb-6 leading-relaxed flex-grow">{calculator.description}</p>
+
+              {/* Title */}
+              <h3 className="text-base sm:text-lg md:text-xl font-semibold text-slate-800 mb-1 sm:mb-2">
+                {calculator.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-sm sm:text-base text-slate-600 mb-4 sm:mb-6 leading-relaxed flex-grow">
+                {calculator.description}
+              </p>
+
+              {/* Button */}
               <div className="mt-auto">
                 <Link href={`/categories/${category}/${calculator.id}`}>
-                  <button className="w-full bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white rounded-xl cursor-pointer py-2">
+                  <button className="w-full bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white rounded-xl cursor-pointer py-2 text-sm sm:text-base">
                     Use Calculator
                   </button>
                 </Link>
@@ -130,9 +144,12 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           ))}
         </div>
 
+        {/* Fallback */}
         {calculators.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-slate-500 text-lg">Calculators for this category are coming soon!</p>
+            <p className="text-slate-500 text-base sm:text-lg">
+              Calculators for this category are coming soon!
+            </p>
           </div>
         )}
       </div>

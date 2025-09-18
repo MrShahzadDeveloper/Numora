@@ -47,15 +47,19 @@ const CategoriesPage = () => {
   ];
 
   return (
-    <section className="p-20 flex flex-col gap-20">
-      <div className="flex flex-col justify-center items-center gap-5">
-        <h1 className="text-4xl font-bold text-slate-800">Choose Your Category</h1>
-        <p className="text-lg text-gray-600 text-center max-w-2xl">
+    <section className="px-4 sm:px-8 md:px-12 lg:px-20 py-12 sm:py-16 md:py-20 flex flex-col gap-12 sm:gap-16 md:gap-20">
+      {/* Header */}
+      <div className="flex flex-col justify-center items-center gap-4 text-center">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800">
+          Choose Your Category
+        </h1>
+        <p className="text-base sm:text-lg text-gray-600 max-w-2xl">
           Find the perfect calculator for your needs from our comprehensive collection
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {/* Category Cards Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto w-full">
         {categories.map((item) => (
           <CategoryCard
             key={item.id}
@@ -63,7 +67,7 @@ const CategoriesPage = () => {
             description={item.description}
             icon={item.icon}
             calculators={item.calculators}
-            id={item.id} // Used for navigation
+            id={item.id}
           />
         ))}
       </div>
