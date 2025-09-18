@@ -29,32 +29,36 @@ export default function ContactPage() {
         
         {/* 👤 Personal Info / Advertisement Section */}
         <div className="rounded-2xl max-w-2xl p-8 text-center flex flex-col justify-center">
-          <h2 className="text-2xl font-bold text-slate-800 mb-4">
-            👋 Hi, I&#39;m <span className="text-cyan-600">Shahzad</span>
-          </h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            I&#39;m a{" "}
-            <span className="font-semibold">Frontend Developer</span> with
-            expertise in{" "}
-            <span className="text-slate-800 font-medium">
-              React, Next.js, JavaScript, TypeScript, Tailwind CSS, CSS, and
-              HTML
-            </span>
-            . I build modern, responsive, and high-performance web applications.
-          </p>
-          <p className="text-gray-700 text-md mb-4">
-            🚀 Looking to build a website or frontend for your project? Let&#39;s
-            work together!
-          </p>
+  <h2 className="text-2xl font-bold text-slate-800 mb-4">
+    👋 Hi, I&#39;m <span className="text-cyan-600">Shahzad</span>
+  </h2>
 
-          {/* Email / CTA */}
-          <a
-            href="mailto:mr.shahzad.developer@gmail.com"
-            className="inline-block px-6 py-3 bg-cyan-600 text-white rounded-lg shadow hover:bg-cyan-700 transition"
-          >
-            📧 Email Me Directly
-          </a>
-        </div>
+  <p className="text-gray-600 text-lg leading-relaxed mb-6">
+    Do you want to build a{" "}
+    <span className="font-semibold">website or tool</span> that can generate
+    revenue through <span className="font-medium text-slate-800">
+      Google AdSense, affiliate marketing, or other online channels
+    </span>
+    ? I help create modern, high-performance, and revenue-focused platforms.
+  </p>
+
+  <p className="text-gray-700 text-md mb-4">
+    🚀 Let&#39;s work together to turn your idea into a profitable online
+    business.
+  </p>
+
+  {/* Email / CTA */}
+ <a
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=mr.shahzad.developer@gmail.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block px-6 py-3 bg-cyan-600 text-white rounded-lg shadow hover:bg-cyan-700 transition"
+>
+  📧 Email Me Directly
+</a>
+
+</div>
+
 
         {/* 📩 Contact Form Section */}
         <div className="bg-white rounded-2xl shadow-md p-8">

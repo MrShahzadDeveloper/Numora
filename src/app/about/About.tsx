@@ -79,7 +79,7 @@ const AboutContent = () => {
           <h2 className="text-2xl font-semibold text-slate-800 mb-6 text-center">
             Explore Our Categories
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-center items-center">
             {features.map((feature, index) => (
               <div
                 key={index}
