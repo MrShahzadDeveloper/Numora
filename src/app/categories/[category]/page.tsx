@@ -27,7 +27,31 @@ import {
   BookOpen,
   CalendarDays,
 } from "lucide-react";
+import { Metadata } from "next";
 import Link from "next/link";
+
+const displayTitleMap: { [key: string]: string } = {
+  health: "Health",
+  "unit-conversions": "Unit Conversions",
+  finance: "Finance",
+  "maths-science": "Maths & Science",
+  "everyday-life": "Everyday Life",
+};
+
+
+
+export async function generateMetadata(
+  { params }: CategoryPageProps
+): Promise<Metadata> {
+  const category = params.category;
+  const displayTitle = displayTitleMap[category] || "Category";
+
+  return {
+    title: `${displayTitle} Calculators`,
+    description: `Explore free ${displayTitle.toLowerCase()} calculators on Numora. Find tools for ${displayTitle.toLowerCase()} to make your life easier.`,
+  };
+}
+
 
 interface Calculator {
   title: string;
@@ -90,7 +114,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     health: "Health",
     "unit-conversions": "Unit Conversions",
     finance: "Finance",
-    "maths-science": "Math & Science",
+    "maths-science": "Maths & Science",
     "everyday-life": "Everyday Life",
   };
   const displayTitle = displayTitleMap[category] || category;

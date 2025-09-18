@@ -35,14 +35,6 @@ export default function WaterIntakeCalculator() {
   return (
     <div className="min-h-[92vh]">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Back Button */}
-        <Link
-          href="/categories/health"
-          className="mb-8 flex items-center text-slate-600 hover:text-cyan-600"
-        >
-          <ArrowLeft className="h-4 w-4 mr-2" />
-          Back to Health
-        </Link>
 
         {/* Calculator Card */}
         <div className="p-8 rounded-2xl shadow-xl bg-white/90 backdrop-blur-sm">

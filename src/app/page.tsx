@@ -1,7 +1,6 @@
 import React from "react";
 import { Heart, Scale, DollarSign, Beaker, Clock } from "lucide-react";
 import { CategoryCard } from "@/components/CategoryCard";
-import Button from "@/components/Button";
 
 const HomePage = () => {
   const homeCategories = [
@@ -14,10 +13,7 @@ const HomePage = () => {
       calculators: [
         "BMI Calculator",
         "Water Intake",
-        "Calorie Counter",
-        "Body Fat Calculator",
-        "Steps to Calories Calculator",
-        "Heart Rate Calculator",
+        "Calorie Counter etc."
       ],
     },
     {
@@ -26,7 +22,7 @@ const HomePage = () => {
       description:
         "Convert between different units of measurement including height, weight, distance, and temperature.",
       icon: Scale,
-      calculators: ["Height Calculator", "Weight Calculator", "Distance Calculator", "Temperature Calculator"],
+      calculators: ["Height Calculator", "Weight Calculator", "Distance Calculator etc."],
     },
     {
       id: "finance",
@@ -34,7 +30,7 @@ const HomePage = () => {
       description:
         "Calculate loans, EMI, discounts, and currency conversions for smart financial planning.",
       icon: DollarSign,
-      calculators: ["Loan Calculator", "EMI Calculator", "Discount Calculator", "Currency Calculator"],
+      calculators: ["Loan Calculator", "EMI Calculator", "Discount Calculator etc."],
     },
   ];
 
@@ -45,7 +41,7 @@ const HomePage = () => {
       description:
         "Calculate BMI, water intake, calories, and other health metrics for a better lifestyle.",
       icon: Heart,
-      calculators: ["BMI Calculator", "Water Intake Calculator", "Calorie Counter"],
+      calculators: ["BMI Calculator", "Water Intake Calculator", "Calorie Counter etc."],
     },
     {
       id: "unit-conversions",
@@ -53,7 +49,7 @@ const HomePage = () => {
       description:
         "Convert between different units of measurement including height, weight, distance, and temperature.",
       icon: Scale,
-      calculators: ["Height Calculator", "Weight Calculator", "Distance Calculator", "Temperature Calculator"],
+      calculators: ["Height Calculator", "Weight Calculator", "Distance Calculator etc."],
     },
     {
       id: "finance",
@@ -61,15 +57,15 @@ const HomePage = () => {
       description:
         "Calculate loans, EMI, discounts, and currency conversions for smart financial planning.",
       icon: DollarSign,
-      calculators: ["Loan Calculator", "EMI Calculator", "Discount Calculator", "Currency Converter"],
+      calculators: ["Loan Calculator", "EMI Calculator", "Discount Calculator etc."],
     },
     {
       id: "maths-science",
-      title: "Math & Science",
+      title: "Maths & Science",
       description:
         "Advanced scientific calculations, physics formulas, and chemistry computations.",
       icon: Beaker,
-      calculators: ["Scientific Calculator", "Physics Calculator", "Chemistry Calculator"],
+      calculators: ["Scientific Calculator", "Physics Calculator", "Chemistry Calculator etc."],
     },
     {
       id: "everyday-life",
@@ -77,7 +73,7 @@ const HomePage = () => {
       description:
         "Simple daily calculations including tip calculator, age calculator, and time zones.",
       icon: Clock,
-      calculators: ["Tip Calculator", "Age Calculator", "Time Zone Calculator"],
+      calculators: ["Tip Calculator", "Age Calculator", "Time Zone Calculator etc."],
     },
   ];
 
@@ -118,7 +114,7 @@ const HomePage = () => {
       </section>
 
       {/* Full Categories Section */}
-      <section className="min-h-screen mt-10 px-4">
+      <section className="min-h-screen mt-10 px-4 mb-20">
         <div className="flex flex-col justify-center items-center gap-4 text-center">
           <h1 className="text-2xl sm:text-3xl md:text-4xl">Choose Your Category</h1>
           <p className="text-base sm:text-lg text-gray-600">
