@@ -222,3 +222,17 @@ export default function CalculatorPage({ params }: CalculatorPageProps) {
     </div>
   );
 }
+
+// ✅ Needed for static export (Next.js 13+)
+export async function generateStaticParams() {
+  const categories = Object.keys(calculatorsMeta);
+
+  const params = categories.flatMap((category) =>
+    Object.keys(calculatorsMeta[category]).map((calculator) => ({
+      category,
+      calculator,
+    }))
+  );
+
+  return params;
+}
