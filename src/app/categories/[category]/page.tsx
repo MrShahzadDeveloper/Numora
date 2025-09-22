@@ -180,3 +180,11 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     </div>
   );
 }
+
+
+// ✅ Needed for static export
+export async function generateStaticParams() {
+  return Object.keys(calculatorsData).map((category) => ({
+    category,
+  }));
+}
